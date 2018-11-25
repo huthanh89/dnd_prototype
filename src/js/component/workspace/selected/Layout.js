@@ -3,10 +3,18 @@
 //-----------------------------------------------------------------------------//
 
 import _          from 'lodash';
+import styled     from 'styled-components';
 import Connector  from './Connector.js';
 import Item       from './Item.js';
 import Components from 'lib/components.js';
 import React      from 'react';
+
+//-----------------------------------------------------------------------------//
+
+const Wrapper = styled.div`
+  max-height: 500px;
+  overflow-y: auto;
+`;
 
 //-----------------------------------------------------------------------------//
 // Component
@@ -33,9 +41,9 @@ class Component extends React.Component {
 
   render() {
     return (
-      <div>
+      <Wrapper>
         {this.getViews()}
-      </div>
+      </Wrapper>
     );
   }
 }

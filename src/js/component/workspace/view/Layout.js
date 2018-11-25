@@ -2,9 +2,9 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import Selected from './selected/Layout.js';
-import View     from './view/Layout.js';
-import React    from 'react';
+import Header      from './Header.js';
+import Motherboard from './Motherboard.js';
+import React       from 'react';
 
 //-----------------------------------------------------------------------------//
 // Component
@@ -12,18 +12,20 @@ import React    from 'react';
 
 class Component extends React.Component {
 
+  constructor(){
+    super();
+    this.states = {
+      view: 0,
+      position: 'front'
+    };
+  }
+
   render() {
 
     return (
-      <div className="row">
-
-        <div className="col-lg-6">
-          <Selected {...this.props}/>
-        </div>
-
-        <div className="col-lg-6 bg-dark">
-          <View {...this.props}/>
-        </div>
+      <div >
+        <Header/>
+        <Motherboard/>
       </div>
     );
   }

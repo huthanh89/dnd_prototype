@@ -10,17 +10,24 @@ import React from 'react';
 
 class Component extends React.Component {
 
+  constructor(){
+    super();
+    this.state = {
+      cpu: true,
+      ram: false
+    }
+  }
+
   dragOver(event){
     console.log('enter');
     event.preventDefault();
     if (event.target.getAttribute("draggable") === "true"){
-      event.dataTransfer.dropEffect = "none"; // dropping is not allowed
+      event.dataTransfer.dropEffect = "none"; 
     }
     else{
       event.target.classList.add("drag-over");
       event.dataTransfer.dropEffect = "all";
     }
-    
   }
   
   dragLeave(event){
@@ -28,11 +35,10 @@ class Component extends React.Component {
   }
 
   dragDrop(event){
-    event.preventDefault(); // Stop some browser from redirecting.
-    let data = event.dataTransfer.getData("foo");
+    event.preventDefault();
+    let data = event.dataTransfer.getData("text");
     console.log(data);
     event.target.appendChild(document.getElementById(data));
-    
   }
 
   render() {

@@ -20,7 +20,7 @@ const initialState = function(){
         { device: 'computer'     }
       ],
     },
-    componentID: '3'
+    componentID: '0'
   };
 };
 

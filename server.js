@@ -7,7 +7,6 @@ const express     = require('express');
 const compression = require('compression')
 const app         = express();
 const config      = require('./server/config.js');
-const mongoose    = require('mongoose');
 const bodyParser  = require('body-parser');
 
 //-----------------------------------------------------------------------------//
@@ -56,6 +55,6 @@ urls.forEach(function(url){
 // Listen app on the following port.
 //-----------------------------------------------------------------------------//
 
-app.listen(config.port, () => console.log(`Math App listening on port ${config.port}`))
+app.listen(config.port, () => console.log(`App listening on port ${config.port}`))
 
 //-----------------------------------------------------------------------------//
