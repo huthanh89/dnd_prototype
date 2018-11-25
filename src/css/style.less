@@ -1,0 +1,70 @@
+body {
+	font-family: "Motiva Sans", Sans-serif;
+	background: #e9ebee;
+	min-height:   100vh;
+}
+
+.container{
+	background-color: white;
+	min-height:       100vh;
+}
+
+#motherboard-image-container{
+	min-width: 400px;
+	background: green;
+}
+
+#motherboard-image{
+	background-image:    url("../asset/motherboard.png");
+	background-repeat:   no-repeat;
+	background-position: center;
+	background-size:     100% 100%;
+	min-height:          500px;
+}
+
+.hotspot-cpu{
+	background: rgba(255, 0, 0, 0.699);
+	width:        15%;
+	height:       100px;
+	position:     absolute;
+	left: 		  68%;
+	top:  		  160px;
+	border: 	  dashed rgb(237, 238, 168) 3px;
+}
+
+.hotspot-ram{
+	background: rgba(255, 0, 0, 0.685);
+	width:        60%;
+	height:   	  40px;
+	position: 	  absolute;
+	left:     	  30%;
+	top:      	  360px;
+	border:   	  dashed rgb(237, 238, 168) 3px;
+}
+
+.draggable-object{
+	width:   75px;
+	height:  75px;
+	display: inline-block;
+}
+
+.drag-over{
+	background: blue;
+}
+
+
+.list-item{
+	border: solid 2px black;
+	width:  300px;
+}
+
+.target{
+	border: solid 2px black;
+	height: 200px;
+	width:  200px;
+}
+
+#drag-container{
+	white-space: nowrap;
+	overflow: auto;
+}
