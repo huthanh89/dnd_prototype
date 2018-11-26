@@ -12,7 +12,6 @@ import React      from 'react';
 //-----------------------------------------------------------------------------//
 
 const Wrapper = styled.div`
-  background: yellow;
   min-height: 300px;
   max-height: 500px;
   overflow-y: auto;

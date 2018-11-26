@@ -12,9 +12,7 @@ import React  from 'react';
 //-----------------------------------------------------------------------------//
 
 class Component extends React.Component {
-
   render() {
-
     return (
       <div className="card">
         <div className="card-body">
