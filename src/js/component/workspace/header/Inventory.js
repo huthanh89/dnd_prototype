@@ -12,7 +12,8 @@ class Component extends React.Component {
 
   constructor(){
     super();
-    this.clicked = this.clicked.bind(this);
+    this.clicked  = this.clicked.bind(this);
+    this.dragDrop = this.dragDrop.bind(this);
   }
   
   dragOver(event){
@@ -21,8 +22,8 @@ class Component extends React.Component {
   
   dragDrop(event){
     event.preventDefault();
-    let data = JSON.parse(event.dataTransfer.getData('remove'));
-    console.log(data);
+    let data = JSON.parse(event.dataTransfer.getData('component'));
+    this.props.actionDisconnectComponent(data.componentType);
   }
 
   clicked(){

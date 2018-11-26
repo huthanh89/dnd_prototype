@@ -10,19 +10,10 @@ import React       from 'react';
 //-----------------------------------------------------------------------------//
 
 class Component extends React.Component {
-
-  constructor(){
-    super();
-    this.states = {
-      view: 0,
-      position: 'front'
-    };
-  }
-
   render() {
     return (
       <div >
-        <Motherboard/>
+        <Motherboard {...this.props}/>
       </div>
     );
   }

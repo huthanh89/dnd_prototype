@@ -10,16 +10,9 @@ import _ from 'lodash';
 
 const initialState = function(){
   return {
-    scenarioID:  '',
-    inventory:   [],
-    workspace:{
-      views: [
-        { device: 'power_supply' },
-        { device: 'wall_outlet'  },
-        { device: 'monitor'      },
-        { device: 'computer'     }
-      ],
-    },
+    cpu:         false,
+    ram:         false,
+    powersupply: false,
     componentID: '0'
   };
 };
@@ -34,6 +27,16 @@ function reducer (prevState=initialState(), action){
     case 'SELECT_COMPONENT': {
       let state         = prevState;
       state.componentID = action.componentID;
+      return _.clone(state);
+    }
+    case 'CONNECT_COMPONENT': {
+      let state         = prevState;
+      state[action.componentType] = true;
+      return _.clone(state);
+    }
+    case 'DiSCONNECT_COMPONENT': {
+      let state         = prevState;
+      state[action.componentType] = false;
       return _.clone(state);
     }
     default: {

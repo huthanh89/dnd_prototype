@@ -9,13 +9,13 @@ import 'drag-drop-touch';
 //-----------------------------------------------------------------------------//
 
 const Hotspot = styled.div`
-  background: rgba(255, 0, 0, 0.699);
-  width:      15%;
-  height:     100px;
-  position:   absolute;
-  left: 		  68%;
-  top:  		  180px;
-  border: 	  dashed rgb(237, 238, 168) 3px;
+  background: rgba(255, 0, 0, 0.685);
+  width:        60%;
+  height:   	  40px;
+  position: 	  absolute;
+  left:     	  30%;
+  top:      	  360px;
+  border:   	  dashed rgb(237, 238, 168) 3px;
 `;
 
 //-----------------------------------------------------------------------------//
@@ -31,7 +31,7 @@ class Component extends React.Component {
 
   dragStart(event){
     event.dataTransfer.setData("component", JSON.stringify({
-      componentType: 'cpu',
+      componentType: 'ram',
     }));
   }
 
@@ -41,21 +41,21 @@ class Component extends React.Component {
   
   dragDrop(event){
     event.preventDefault();
-    this.props.actionConnectComponent('cpu');
+    this.props.actionConnectComponent('ram');
   }
 
   getView(){
     if(this.props.connected){
       return(
-        <img id="motherboard-cpu" src='asset/cpu.png' 
-          draggable="true" onDragStart={this.dragStart}
-          style={{
-            position: 'relative',
-            width:    '100px',
-            height:   '100px',
-            left:     '70%',
-            top:      '140px'
-          }}
+        <img id="motherboard-cpu" src='asset/ram.png' 
+        draggable="true" onDragStart={this.dragStart}
+        style={{
+          position: 'absolute',
+          width:    '50%',
+          height:   '250px',
+          left:     '35%',
+          top:      '280px'
+        }}
         />
       );
     }

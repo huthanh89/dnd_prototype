@@ -37,6 +37,7 @@ class Component extends React.Component {
         </button>
         <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
           <a className="dropdown-item" onClick={this.instruction} href="#">Instruction</a>
+          <a className="dropdown-item" href="#">Accessment</a>
           <a className="dropdown-item" onClick={this.inventory}   href="#">Inventory</a>
           <a className="dropdown-item" onClick={this.workspace}   href="#">Workspace</a>
         </div>

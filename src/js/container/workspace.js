@@ -18,18 +18,18 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actionChangeLocation: function (location){
+        actionConnectComponent: function (componentType){
             return dispatch({
-                type:   'CHANGE_LOCATION',
-                location: location
+                type:         'CONNECT_COMPONENT',
+                componentType: componentType
             });
         },
-        actionChangeView: function (view){
+        actionDisconnectComponent: function (componentType){
             return dispatch({
-                type: 'CHANGE_VIEW',
-                view:  view
+                type:         'DiSCONNECT_COMPONENT',
+                componentType: componentType
             });
-        },
+        }
     };
 }
 

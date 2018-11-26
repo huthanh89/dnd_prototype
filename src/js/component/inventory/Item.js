@@ -41,8 +41,9 @@ class Component extends React.Component {
           <img className="draggable-object" src={`asset/${this.props.img}.png`} />
         </div>
         <div className="col-7">
-          <p>{this.props.name}</p>
-          <p>{this.props.type}</p>
+          <span className="d-block">{this.props.name}</span>
+          <span className="d-block">{this.props.type}</span>
+          <a className="d-block" href="#">details</a>
         </div>
         <div className="col-2"> 
           <BtnWrapper className="float-right">
