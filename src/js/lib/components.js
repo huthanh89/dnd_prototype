@@ -2,14 +2,14 @@ export default [
     { 
         id:       '0',
         name:     'CPU, Socket AM3',
-        type:     'Processor',
+        type:     'cpu',
         img:      'cpu',
         connected: false,
     },
     { 
         id:   '1',
         name: 'Radion RX 550',
-        type: 'Graphic Cards',
+        type: 'graphic_card',
         img:  'graphic_card',
         connected: false
 
@@ -17,14 +17,14 @@ export default [
     {
         id:   '2',
         name: 'DDR3 GB, DDR3 1600',
-        type: 'Rams',
+        type: 'ram',
         img:  'ram',
         connected: false,
     },
     { 
         id:   '3',
         name: 'Power Supply, ATX 20+4pin, PCIe',
-        type: 'Power Supplies',
+        type: 'power_supply',
         img:  'powersupply',
         connected: false,
         connectors: [

@@ -10,10 +10,11 @@ import _ from 'lodash';
 
 const initialState = function(){
   return {
-    cpu:         false,
+    cpu:         true,
     ram:         false,
     powersupply: false,
-    componentID: '0'
+    componentID: '0',
+    dragItem:     null
   };
 };
 
@@ -37,6 +38,11 @@ function reducer (prevState=initialState(), action){
     case 'DiSCONNECT_COMPONENT': {
       let state         = prevState;
       state[action.componentType] = false;
+      return _.clone(state);
+    }
+    case 'DRAG_COMPONENT': {
+      let state      = prevState;
+      state.dragItem = action.component;
       return _.clone(state);
     }
     default: {

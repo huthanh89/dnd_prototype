@@ -29,6 +29,12 @@ function mapDispatchToProps(dispatch) {
                 type:         'DiSCONNECT_COMPONENT',
                 componentType: componentType
             });
+        },
+        actionDragComponent: function (component){
+            return dispatch({
+                type:     'DRAG_COMPONENT',
+                component: component
+            });
         }
     };
 }

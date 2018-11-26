@@ -32,10 +32,10 @@ class Component extends React.Component {
 
   getViews(){
     let result = [];
-    result.push(<Item {...this.component} key={this.component.id}/>);
+    result.push(<Item {...this.component} key={this.component.id} {...this.props}/>);
     if(this.component.connectors){
       _.forEach(this.component.connectors, (component)=>{
-        result.push(<Connector {...component} key={component.id}/>);
+        result.push(<Connector {...component} key={component.id} {...this.props}/>);
       });
     }
     return result;

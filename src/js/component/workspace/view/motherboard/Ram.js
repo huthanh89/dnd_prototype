@@ -26,13 +26,17 @@ class Component extends React.Component {
   
   constructor(){
     super();
-    this.dragDrop = this.dragDrop.bind(this);
+    this.dragDrop  = this.dragDrop.bind(this);
+    this.dragStart = this.dragStart.bind(this);
+    this.dragEnd   = this.dragEnd.bind(this);
   }
 
   dragStart(event){
-    event.dataTransfer.setData("component", JSON.stringify({
-      componentType: 'ram',
-    }));
+    this.props.actionDragComponent('ram');
+  }
+  
+  dragEnd(event){
+    this.props.actionDragComponent(null);
   }
 
   dragOver(event){
@@ -41,13 +45,15 @@ class Component extends React.Component {
   
   dragDrop(event){
     event.preventDefault();
-    this.props.actionConnectComponent('ram');
+    if(this.props.dragItem==='ram'){
+      this.props.actionConnectComponent('ram');
+    }
   }
 
   getView(){
     if(this.props.connected){
       return(
-        <img id="motherboard-cpu" src='asset/ram.png' 
+        <img src='asset/ram.png' 
         draggable="true" onDragStart={this.dragStart}
         style={{
           position: 'absolute',

@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 //-----------------------------------------------------------------------------//
 
 class Component extends React.Component {
-
     render() {
         return (
             <div className="card">

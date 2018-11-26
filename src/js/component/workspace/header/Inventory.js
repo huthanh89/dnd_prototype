@@ -22,8 +22,7 @@ class Component extends React.Component {
   
   dragDrop(event){
     event.preventDefault();
-    let data = JSON.parse(event.dataTransfer.getData('component'));
-    this.props.actionDisconnectComponent(data.componentType);
+    this.props.actionDisconnectComponent(this.props.dragItem);
   }
 
   clicked(){

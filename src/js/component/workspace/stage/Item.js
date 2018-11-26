@@ -27,13 +27,24 @@ const BtnWrapper = styled.div`
 
 class Component extends React.Component {
 
+  constructor(){
+    super();
+    this.dragStart = this.dragStart.bind(this);
+    this.dragEnd   = this.dragEnd.bind(this);
+  }
+
   dragStart(event){
-    event.dataTransfer.setData("text", event.target.id);
+    this.props.actionDragComponent(this.props.type);
+  }
+  
+  dragEnd(event){
+    this.props.actionDragComponent(null);
   }
 
   render() {
     return (
-      <Wrapper id={'item-' + this.props.id} className="row" draggable="true" onDragStart={this.dragStart}>
+      <Wrapper id={'item-' + this.props.id} className="row" 
+        draggable="true" onDragStart={this.dragStart} onDragEnd={this.dragEnd}>
         <div className="col-3">
           <img src={`asset/${this.props.img}.png`} width="75" height="75"/>
         </div>
