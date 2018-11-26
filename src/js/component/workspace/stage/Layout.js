@@ -2,23 +2,20 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import React  from 'react';
-import styled from 'styled-components';
-import 'drag-drop-touch';
+import _          from 'lodash';
+import styled     from 'styled-components';
+import Connector  from './Connector.js';
+import Item       from './Item.js';
+import Components from 'lib/components.js';
+import React      from 'react';
 
 //-----------------------------------------------------------------------------//
 
 const Wrapper = styled.div`
-  border:     1px solid black;
-  font-size:  16px;
-  padding:    5px;
-  background: #e6e6e6;
-  width:      100%;
-`;
-
-const BtnWrapper = styled.div`
-  position: relative;
-  top:      25px;
+  background: yellow;
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: auto;
 `;
 
 //-----------------------------------------------------------------------------//
@@ -26,22 +23,28 @@ const BtnWrapper = styled.div`
 //-----------------------------------------------------------------------------//
 
 class Component extends React.Component {
+  constructor(props){
+    super();
+    this.component = _.find(Components, (component) =>{
+      return component.id === props.componentID;
+    });
+  }
 
-  dragStart(event){
-    event.dataTransfer.setData("text", event.target.id);
+  getViews(){
+    let result = [];
+    result.push(<Item {...this.component} key={this.component.id}/>);
+    if(this.component.connectors){
+      _.forEach(this.component.connectors, (component)=>{
+        result.push(<Connector {...component} key={component.id}/>);
+      });
+    }
+    return result;
   }
 
   render() {
     return (
-      <Wrapper id={'item-' + this.props.id} className="row" draggable="true" onDragStart={this.dragStart}>
-        <div className="col-3">
-          <img className="draggable-object" src={`asset/${this.props.img}.png`} />
-        </div>
-        <div className="col-9">
-          <span className="d-block">{this.props.name}</span>
-          <span className="d-block">{this.props.type}</span>
-          <span className="d-block">connected: {this.props.connected.toString()}</span>
-        </div>
+      <Wrapper>
+        {this.getViews()}
       </Wrapper>
     );
   }

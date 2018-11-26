@@ -33,13 +33,13 @@ class Component extends React.Component {
 
   render() {
     return (
-      <Wrapper id={'item-' + this.props.id} className="row"  draggable="true" onDragStart={this.dragStart}>
+      <Wrapper id={'item-' + this.props.id} className="row" draggable="true" onDragStart={this.dragStart}>
         <div className="col-3">
-          <img className="draggable-object" src={`asset/${this.props.img}.png`} />
+          <img src={`asset/${this.props.img}.png`} width="75" height="75"/>
         </div>
         <div className="col-9">
+          <span className="d-block">{this.props.name}</span>
           <span className="d-block">{this.props.type}</span>
-          <span className="d-block">Connector: {this.props.connector}</span>
           <span className="d-block">connected: {this.props.connected.toString()}</span>
         </div>
       </Wrapper>

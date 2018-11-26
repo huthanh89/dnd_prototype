@@ -2,36 +2,28 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import Target from './Target.js';
-import React  from 'react';
-import { Draggable, Droppable } from 'react-beautiful-dnd';
-
+import Inventory from './Inventory.js';
+import React     from 'react';
 
 //-----------------------------------------------------------------------------//
 // Component
 //-----------------------------------------------------------------------------//
 
 class Component extends React.Component {
-
   render() {
     return (
-
-        <Draggable draggableId="draggable-1" index={0}>
-          {(provided, snapshot) => (
-            <div
-              ref={provided.innerRef}
-              {...provided.draggableProps}
-              {...provided.dragHandleProps}
-            >
-              <h4>My draggable</h4>
-            </div>
-          )}
-        </Draggable>
-
-
+      <div className="text-center">
+        <button className="btn btn-secondary mr-2">
+          <i className="fas fa-arrow-left"></i>
+        </button>
+        <button className="btn btn-secondary">
+          <i className="fas fa-arrow-right"></i>
+        </button>
+      </div>
     );
   }
 }
+
 //-----------------------------------------------------------------------------//
 // Export
 //-----------------------------------------------------------------------------//

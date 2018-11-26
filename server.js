@@ -35,6 +35,10 @@ app.use(compression());
 // Handle routes.
 //-----------------------------------------------------------------------------//
 
+// Initialize api routes:
+
+require('./server/api/module.js')(app)
+
 let urls = [
     '/',
     '/instruction',

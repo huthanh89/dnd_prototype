@@ -2,32 +2,27 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import React from 'react';
+const _ = require('lodash');
 
 //-----------------------------------------------------------------------------//
-// Component
+// API Route
 //-----------------------------------------------------------------------------//
 
-class Component extends React.Component {
+const route = function(app){
 
-  render() {
-    return (
-      <div className="row">
-        <div className="col-4">
-          <img className="draggable-object" src="asset/powersupply.png"  />
-        </div>
-        <div className="col-4">
-          Some detail text
-        </div>
-      </div>
-    );
-  }
+    app.get('/api/scenario', function (req, res) {
+
+        console.log('here')
+
+        res.send(200);
+    });
+
 }
 
 //-----------------------------------------------------------------------------//
-// Export
+// Import
 //-----------------------------------------------------------------------------//
 
-export default Component;
+module.exports = route;
 
 //-----------------------------------------------------------------------------//

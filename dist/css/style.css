@@ -3835,7 +3835,25 @@ body {
   background-size: 100% 100%;
   min-height: 500px;
 }
-.hotspot-cpu {
+.hotspot-cpu-connected {
+  background-image: url("../asset/cpu.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 15%;
+  height: 100px;
+  position: absolute;
+  left: 68%;
+  top: 160px;
+  border: dashed #edeea8 3px;
+}
+.motherboard-cpu {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 60%;
+  top: 140px;
+}
+.hotspot-cpu-unconnected {
   background: rgba(255, 0, 0, 0.699);
   width: 15%;
   height: 100px;
@@ -3859,7 +3877,8 @@ body {
   display: inline-block;
 }
 .drag-over {
-  background: blue;
+  background: rgba(236, 175, 41, 0.274);
+  border: dashed #edeea8 3px;
 }
 .list-item {
   border: solid 2px black;

@@ -2,8 +2,7 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import Header      from './Header.js';
-import Motherboard from './Motherboard.js';
+import Motherboard from './motherboard/Layout';
 import React       from 'react';
 
 //-----------------------------------------------------------------------------//
@@ -21,10 +20,8 @@ class Component extends React.Component {
   }
 
   render() {
-
     return (
       <div >
-        <Header/>
         <Motherboard/>
       </div>
     );

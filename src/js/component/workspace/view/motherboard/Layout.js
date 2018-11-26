@@ -2,6 +2,7 @@
 // Import
 //-----------------------------------------------------------------------------//
 
+import CPU   from './CPU.js';
 import React from 'react';
 
 //-----------------------------------------------------------------------------//
@@ -12,10 +13,11 @@ class Component extends React.Component {
 
   constructor(){
     super();
+    this.dragDrop = this.dragDrop.bind(this);
     this.state = {
       cpu: true,
       ram: false
-    }
+    };
   }
 
   dragOver(event){
@@ -39,18 +41,17 @@ class Component extends React.Component {
     let data = event.dataTransfer.getData("text");
     console.log(data);
     event.target.appendChild(document.getElementById(data));
+    this.setState({
+      cpu: true
+    });
   }
 
   render() {
+    console.log('cpu', this.state.cpu);
     return (
       <div id="motherboard-image">
-
-        <div id="drag-hotzone-cpu" className="hotspot-cpu" 
-          onDrop={this.dragDrop} onDragOver={this.dragOver} onDragLeave={this.dragLeave}
-          onTouchStart={this.touchStart}
-        />
+        {<CPU connected={this.state.cpu}/>}
         <div id="drag-hotzone-ram" className="hotspot-ram" onDrop={this.dragDrop} onDragOver={this.dragOver} onDragLeave={this.dragLeave}/>
-      
       </div>
     );
   }

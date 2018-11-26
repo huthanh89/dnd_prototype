@@ -2,22 +2,40 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import   Board        from './board.js';
-import   React        from 'react';
-import { DragSource } from 'react-dnd';
+import React from 'react';
 
 //-----------------------------------------------------------------------------//
 // Component
 //-----------------------------------------------------------------------------//
 
-class Layout extends React.Component {
+class Component extends React.Component {
 
+  constructor(){
+    super();
+    this.clicked = this.clicked.bind(this);
+  }
+  
+  dragOver(event){
+    event.preventDefault();
+  }
+  
+  dragDrop(event){
+    event.preventDefault();
+    let data = JSON.parse(event.dataTransfer.getData('remove'));
+    console.log(data);
+  }
+
+  clicked(){
+    this.props.history.push('/inventory');
+  }
 
   render() {
     return (
-      <div>
-        <Board knightPosition={[0, 0]} />
-      </div>
+      <button className="btn btn-secondary" onClick={this.clicked}
+        onDrop={this.dragDrop} onDragOver={this.dragOver}
+      >
+        <i className="fas fa-box-open"></i>
+      </button>
     );
   }
 }
@@ -26,6 +44,6 @@ class Layout extends React.Component {
 // Export
 //-----------------------------------------------------------------------------//
 
-export default Layout;
+export default Component;
 
 //-----------------------------------------------------------------------------//
