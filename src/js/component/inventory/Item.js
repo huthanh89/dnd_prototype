@@ -38,7 +38,7 @@ class Component extends React.Component {
     return (
       <Wrapper className="row">
         <div className="col-3">
-          <img className="draggable-object" src={`asset/${this.props.img}.png`} />
+          <img src={`asset/${this.props.img}.png`} width="75" height="75"/>
         </div>
         <div className="col-7">
           <span className="d-block">{this.props.name}</span>
