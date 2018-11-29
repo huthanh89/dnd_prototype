@@ -18,6 +18,12 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
+        actionChangePosition: function (position){
+            return dispatch({
+                type:    'CHANGE_POSITION',
+                position: position
+            });
+        },
         actionConnectComponent: function (componentType){
             return dispatch({
                 type:         'CONNECT_COMPONENT',

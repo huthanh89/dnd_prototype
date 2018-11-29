@@ -2,30 +2,38 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import Inventory from './Inventory.js';
-import Navigate  from './Navigate.js';
-import Position  from './Position.js';
-import React     from 'react';
+import Front       from './front/Layout';
+import Back        from './back/Layout';
+import Drivebay    from './drivebay/Layout';
+import Motherboard from './motherboard/Layout';
+import React       from 'react';
 
 //-----------------------------------------------------------------------------//
 // Component
 //-----------------------------------------------------------------------------//
 
 class Component extends React.Component {
+
+  getView(){
+    console.log(this.props.position);
+    switch(this.props.position){
+      case 'front': {
+        return(<Front {...this.props}/>);
+      }
+      case 'back': {
+        return(<Back {...this.props}/>);
+      }
+      case 'drivebay': {
+        return(<Drivebay {...this.props}/>);
+      }
+      default: {
+        return(<Motherboard {...this.props}/>);
+      }
+    }
+  }
+
   render() {
-    return (
-      <div className="row mb-2">
-        <div className="col-4">
-          <Inventory {...this.props}/>
-        </div>
-        <div className="col-4">
-          <Navigate {...this.props}/>
-        </div>
-        <div className="col-4">
-          <Position {...this.props}/>
-        </div>
-      </div>
-    );
+    return this.getView();
   }
 }
 

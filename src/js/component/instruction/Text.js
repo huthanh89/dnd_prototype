@@ -13,54 +13,42 @@ class Component extends React.Component {
     render() {
         return (
             <div>
-                <p>You work as the IT Administrator for a small corporate network. You have just received a new computer that you are setting up
-                in your office. Your task in this lab is to set the computer up by doing the following:</p>
-                <ul>
-                    <li>Plug the power strip into the wall.</li>
-                    <li>Plug the computer into the power strip.</li>
-                    <li>Connect the following components to the computer:
+                <ol>
+                    <li>Switch to the motherboard view of the computer.</li>
+
+                    <li>Read the motherboard documentation and locate the following components:
 
                     <ul>
-                        <li>Keyboard</li>
-                        <li>Mouse</li>
-                        <li>Speakers</li>
+                        <li>Memory slot</li>
+
+                        <li>PCI slot</li>
+
+                        <li>Main motherboard power connector (20+4 pins)</li>
                     </ul>
                     </li>
 
-                    <li>Add the following objects to the bench, then use the appropriate cables to connect them to the computer:
+                    <li>From the Shelf, install the memory module in an open memory slot.</li>
 
-                    <ul>
-                        <li>Monitor</li>
+                    <li>From the Shelf, install the Firewire expansion card in an open PCI slot.</li>
 
-                        <li>Printer</li>
-                    </ul>
-                    </li>
+                    <li>On the power supply, plug the 20+4 pin motherboard power connector into the motherboard.</li>
 
-                    <li>Plug the following devices into the power strip:
+                    <li>Switch to the drive bays view.</li>
 
-                    <ul>
-                        <li>Monitor</li>
+                    <li>From the Shelf, connect the SATA cable to the data connection on the CD 
+                    drive (the top object in the drive bay).</li>
 
-                        <li>Printer</li>
-                    </ul>
-                    </li>
+                    <li>On the power supply, plug a 15-pin SATA power connector into the power connection on the CD drive (on the left of the
+                    drive).</li>
 
-                    <li>Connect the computer to the network port on the wall plate.</li>
-                </ul>
+                    <li>Switch to the motherboard view of the computer.</li>
 
-                <p>Use the following tips to complete this lab:</p>
+                    <li>Connect the other end of the SATA cable to a SATA connection on the motherboard.</li>
 
-                <ul>
-                    <li>View the details of cables and connectors to examine the shape and pin pattern for each connector. Match the cable
-                    connector to a computer port.</li>
+                    <li>Switch to the front view of the computer.</li>
 
-                    <li>If necessary, zoom into the back of a computer or device on the bench to get a closer look at the connection ports.</li>
-                    <li>Match connector colors to the color of ports on the computer to identify possible matches.</li>
-                    <li>To successfully complete this lab, you will connect every item from the Shelf to the computer.</li>
-                    <li>When you have connected all devices, click the power buttons on the front of the monitor and the computer to verify that
-                    the system can start without errors.</li>
-                    <li>If you notice any problems, recheck all connections.</li>
-                </ul>
+                    <li>Turn on the computer and verify that the system starts.</li>
+                </ol>
             </div>
         );
     }

@@ -2,8 +2,18 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import Motherboard from './motherboard/Layout';
-import React       from 'react';
+import React  from 'react';
+import styled from 'styled-components';
+
+//-----------------------------------------------------------------------------//
+
+const Wrapper = styled.div`
+  background-image:    url("../asset/back.png");
+  background-repeat:   no-repeat;
+  background-position: center;
+  background-size:     contain;
+  min-height:          500px;
+`;
 
 //-----------------------------------------------------------------------------//
 // Component
@@ -12,9 +22,8 @@ import React       from 'react';
 class Component extends React.Component {
   render() {
     return (
-      <div >
-        <Motherboard {...this.props}/>
-      </div>
+      <Wrapper>
+      </Wrapper>
     );
   }
 }

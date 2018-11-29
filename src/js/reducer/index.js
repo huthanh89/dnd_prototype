@@ -10,11 +10,12 @@ import _ from 'lodash';
 
 const initialState = function(){
   return {
-    cpu:         true,
+    cpu:         false,
     ram:         false,
     powersupply: false,
     componentID: '0',
-    dragItem:     null
+    dragItem:     null,
+    position:    'motherboard'
   };
 };
 
@@ -25,6 +26,11 @@ const initialState = function(){
 function reducer (prevState=initialState(), action){
 
   switch (action.type){
+    case 'CHANGE_POSITION': {
+      let state      = prevState;
+      state.position = action.position;
+      return _.clone(state);
+    }
     case 'SELECT_COMPONENT': {
       let state         = prevState;
       state.componentID = action.componentID;

@@ -2,10 +2,18 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import Inventory from './Inventory.js';
-import Navigate  from './Navigate.js';
-import Position  from './Position.js';
-import React     from 'react';
+import React  from 'react';
+import styled from 'styled-components';
+
+//-----------------------------------------------------------------------------//
+
+const Wrapper = styled.div`
+  background-image:    url("../asset/front.png");
+  background-repeat:   no-repeat;
+  background-position: center;
+  background-size:     contain;
+  min-height:          500px;
+`;
 
 //-----------------------------------------------------------------------------//
 // Component
@@ -14,17 +22,8 @@ import React     from 'react';
 class Component extends React.Component {
   render() {
     return (
-      <div className="row mb-2">
-        <div className="col-4">
-          <Inventory {...this.props}/>
-        </div>
-        <div className="col-4">
-          <Navigate {...this.props}/>
-        </div>
-        <div className="col-4">
-          <Position {...this.props}/>
-        </div>
-      </div>
+      <Wrapper>
+      </Wrapper>
     );
   }
 }
